@@ -27,7 +27,7 @@ fi
 brew update
 
 # Upgrade any already installed formulae
-brew upgrade --all
+brew upgrade
 
 # Install my brew packages
 brew install composer
