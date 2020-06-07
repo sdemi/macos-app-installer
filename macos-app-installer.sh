@@ -15,6 +15,8 @@ echo '\n'
 
 # Install Xcode
 xcode-select --install
+read -p "Press any key when the installation has completed." -n1 -s
+echo '\n'
 
 # Check that Homebrew is installed and install if not
 if test ! $(which brew)
