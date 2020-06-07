@@ -33,9 +33,6 @@ brew upgrade --all
 brew install composer
 brew install zsh
 
-# Install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 # Install cask
 brew tap phinze/homebrew-cask
 
@@ -67,3 +64,6 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py --user
 pip install --user ansible
 rm get-pip.py
+
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
