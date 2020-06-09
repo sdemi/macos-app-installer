@@ -53,6 +53,7 @@ brew cask install iterm2
 brew cask install microsoft-teams
 brew cask install visual-studio-code
 brew cask install webex-meetings
+brew cask install mucommander
 
 # Remove brew cruft
 brew cleanup
