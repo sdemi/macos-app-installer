@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #
+# MacOS Catalina 10.15.x personal install script
+#
 # Primary basis of this script has been copied from Deian Isac
 # ref: https://medium.com/@deianisac/how-to-quickly-set-up-a-mac-b9f89aed0dc
 #
@@ -13,10 +15,10 @@ echo Install other apps manually: Microsoft Office, Citrix Workspace, KeepSolid 
 read -p "Press any key to continue… " -n1 -s
 echo '\n'
 
-# Install Xcode
-xcode-select --install
-read -p "Press any key when the installation has completed." -n1 -s
-echo '\n'
+# Install Xcode (install manually if failing)
+#xcode-select --install
+#read -p "Press any key when the installation has completed." -n1 -s
+#echo '\n'
 
 # Check that Homebrew is installed and install if not
 if test ! $(which brew)
