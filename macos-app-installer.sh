@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#
-# MacOS Catalina 10.15.x personal install script
-#
+echo ===============================================================
+echo ===== MacOS Catalina 10.15.x personal installation script =====
+echo ===============================================================
+
 # Primary basis of this script has been copied from Deian Isac
 # ref: https://medium.com/@deianisac/how-to-quickly-set-up-a-mac-b9f89aed0dc
 #
@@ -15,10 +16,18 @@ echo Install other apps manually: Microsoft Office, Citrix Workspace, KeepSolid 
 read -p "Press any key to continue… " -n1 -s
 echo '\n'
 
+echo ========================================================
+echo ===== Skip installation of xcode, install manually =====
+echo ========================================================
+
 # Install Xcode (install manually if failing)
 #xcode-select --install
 #read -p "Press any key when the installation has completed." -n1 -s
 #echo '\n'
+
+echo =======================================
+echo ===== Install and update Homebrew =====
+echo =======================================
 
 # Check that Homebrew is installed and install if not
 if test ! $(which brew)
@@ -33,6 +42,10 @@ brew update
 # Upgrade any already installed formulae
 brew upgrade
 
+echo =====================================
+echo ===== Install Homebrew packages =====
+echo =====================================
+
 # Install my brew packages
 brew install composer
 brew install zsh
@@ -40,33 +53,44 @@ brew install zsh
 # Install cask
 brew tap phinze/homebrew-cask
 
+echo ================================
+echo ===== Install Applications =====
+echo ================================
+
 # Install desired cask packages
 brew cask install cakebrew
 brew cask install google-chrome
-brew cask install google-backup-and-sync
+#brew cask install google-backup-and-sync
 brew cask install folx
-brew cask install vlc
+#brew cask install vlc
 brew cask install appcleaner
 brew cask install sublime-text
 brew cask install iterm2
-brew cask install keepassxc
-brew cask install virtualbox
-brew cask install vagrant
-brew cask install microsoft-teams
-brew cask install webex-meetings
-brew cask install visual-studio-code
+#brew cask install keepassxc
+#brew cask install virtualbox
+#brew cask install vagrant
+#brew cask install microsoft-teams
+#brew cask install webex-meetings
+#brew cask install visual-studio-code
 brew cask install mucommander
 
 # Remove brew cruft
 brew cleanup
 
+echo ========================================
+echo ===== Skip installation of Ansible =====
+echo ========================================
+
 # Install Ansible
 # ref: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip
-#
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py --user
-pip install --user ansible #TODO: add pip to $PATH, line doesnt run cause it cant find pip
-rm get-pip.py
+#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+#python get-pip.py --user
+#pip install --user ansible #TODO: add pip to $PATH, line doesnt run cause it cant find pip
+#rm get-pip.py
+
+echo ====================================
+echo ===== Update System Prefernces =====
+echo ====================================
 
 # Update System Prefernces - Disable Natural Scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -76,8 +100,12 @@ defaults delete com.apple.dock persistent-apps
 defaults delete com.apple.dock persistent-others
 killall Dock
 
-# Add VLC to Dock
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/VLC.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"; killall Dock
+# Add AppCleaner to Dock
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/AppCleaner.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"; killall Dock
+
+echo =============================
+echo ===== Install Oh My Zsh =====
+echo =============================
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
