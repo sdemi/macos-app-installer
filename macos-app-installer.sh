@@ -46,15 +46,15 @@ brew cask install google-chrome
 brew cask install google-backup-and-sync
 brew cask install folx
 brew cask install vlc
-brew cask install virtualbox
 brew cask install appcleaner
 brew cask install sublime-text
-brew cask install keepassxc
-brew cask install vagrant
 brew cask install iterm2
+brew cask install keepassxc
+brew cask install virtualbox
+brew cask install vagrant
 brew cask install microsoft-teams
-brew cask install visual-studio-code
 brew cask install webex-meetings
+brew cask install visual-studio-code
 brew cask install mucommander
 
 # Remove brew cruft
