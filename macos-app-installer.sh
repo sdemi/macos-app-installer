@@ -48,6 +48,7 @@ echo =====================================
 # Install my brew packages
 brew install composer
 brew install zsh
+brew install ansible
 
 # Install cask
 brew tap phinze/homebrew-cask
@@ -75,17 +76,6 @@ brew cask install mucommander
 
 # Remove brew cruft
 brew cleanup
-
-echo ========================================
-echo ===== Skip installation of Ansible =====
-echo ========================================
-
-# Install Ansible
-# ref: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip
-#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-#python get-pip.py --user
-#pip install --user ansible #TODO: add pip to $PATH, line doesnt run cause it cant find pip
-#rm get-pip.py
 
 echo ====================================
 echo ===== Update System Prefernces =====
