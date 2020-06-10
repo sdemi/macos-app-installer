@@ -60,10 +60,10 @@ brew cleanup
 
 # Install Ansible
 # ref: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip
+#
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py --user
-#TODO: add pip to $PATH, line below doesnt run
-pip install --user ansible
+pip install --user ansible #TODO: add pip to $PATH, line doesnt run cause it cant find pip
 rm get-pip.py
 
 # Update System Prefernces - Disable Natural Scrolling
@@ -73,6 +73,9 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults delete com.apple.dock persistent-apps
 defaults delete com.apple.dock persistent-others
 killall Dock
+
+# Add VLC to Dock
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/VLC.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"; killall Dock
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
