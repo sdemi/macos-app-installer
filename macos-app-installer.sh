@@ -89,8 +89,8 @@ defaults delete com.apple.dock persistent-apps
 defaults delete com.apple.dock persistent-others
 killall Dock
 
-# Add AppCleaner to Dock
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/AppCleaner.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"; killall Dock
+# Add muCommander to Dock
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/muCommander.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"; killall Dock
 
 echo =============================
 echo ===== Install Oh My Zsh =====
