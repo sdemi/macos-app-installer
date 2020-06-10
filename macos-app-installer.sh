@@ -6,7 +6,6 @@ echo ===============================================================
 
 # Primary basis of this script has been copied from Deian Isac
 # ref: https://medium.com/@deianisac/how-to-quickly-set-up-a-mac-b9f89aed0dc
-#
 
 # Either use mas-cli (https://github.com/argon/mas) or install manually
 echo Install Mac App Store apps first: Greenshot
