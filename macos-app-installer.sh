@@ -83,7 +83,7 @@ brew cask install iterm2
 #brew cask install webex-meetings
 #brew cask install visual-studio-code
 brew cask install mucommander
-brew cask install wine-stable
+#brew cask install wine-stable
 
 # Remove brew cruft
 brew cleanup
