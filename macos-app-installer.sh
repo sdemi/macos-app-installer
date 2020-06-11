@@ -73,6 +73,7 @@ brew cask install iterm2
 #brew cask install webex-meetings
 #brew cask install visual-studio-code
 brew cask install mucommander
+brew cask install wine-stable
 
 # Remove brew cruft
 brew cleanup
@@ -89,8 +90,20 @@ defaults delete com.apple.dock persistent-apps
 defaults delete com.apple.dock persistent-others
 killall Dock
 
-# Add muCommander to Dock
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/muCommander.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"; killall Dock
+# Add installed apps to Dock
+
+# Google Chrome
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# Sublime Text
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Sublime Text.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# AppCleaner
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/AppCleaner.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# iTerm
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/iTerm.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# muCommander
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/muCommander.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+
+killall Dock
 
 echo =============================
 echo ===== Install Oh My Zsh =====
