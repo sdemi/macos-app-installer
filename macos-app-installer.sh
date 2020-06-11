@@ -10,7 +10,7 @@ echo ===============================================================
 # Either use mas-cli (https://github.com/argon/mas) or install manually
 echo Install Mac App Store apps first: Greenshot
 
-echo Install other apps manually: Microsoft Office, Citrix Workspace, KeepSolid VPN Unlimited
+echo Install other apps manually: Microsoft Office, Citrix Workspace, KeepSolid VPN Unlimited, iStat Menu Pro
 
 read -p "Press any key to continue… " -n1 -s
 echo '\n'
