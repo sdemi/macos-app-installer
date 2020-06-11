@@ -1,8 +1,10 @@
 #!/bin/bash
 
-echo ===============================================================
-echo ===== MacOS Catalina 10.15.x personal installation script =====
-echo ===============================================================
+echo '\n'
+echo    |==========================================================|
+echo    |===== MacOS Catalina 10.15.x personal install script =====|
+echo    |==========================================================|
+echo '\n'
 
 # Primary basis of this script has been copied from Deian Isac
 # ref: https://medium.com/@deianisac/how-to-quickly-set-up-a-mac-b9f89aed0dc
@@ -10,23 +12,27 @@ echo ===============================================================
 # Either use mas-cli (https://github.com/argon/mas) or install manually
 echo Install Mac App Store apps first: Greenshot
 
-echo Install other apps manually: Microsoft Office, Citrix Workspace, KeepSolid VPN Unlimited, iStat Menu Pro
+echo Install other apps manually: Microsoft Office, Citrix Workspace, KeepSolid VPN Unlimited, iStat Menu
 
 read -p "Press any key to continue… " -n1 -s
 echo '\n'
 
-echo ========================================================
-echo ===== Skip installation of xcode, install manually =====
-echo ========================================================
+echo '\n'
+echo    |========================================================|
+echo    |===== Skip installation of xcode, install manually =====|
+echo    |========================================================|
+echo '\n'
 
 # Install Xcode (install manually if failing)
-#xcode-select --install
-#read -p "Press any key when the installation has completed." -n1 -s
-#echo '\n'
+xcode-select --install
+read -p "Press any key when the installation has completed." -n1 -s
+echo '\n'
 
-echo =======================================
-echo ===== Install and update Homebrew =====
-echo =======================================
+echo '\n'
+echo    |=======================================|
+echo    |===== Install and update Homebrew =====|
+echo    |=======================================|
+echo '\n'
 
 # Check that Homebrew is installed and install if not
 if test ! $(which brew)
@@ -41,9 +47,11 @@ brew update
 # Upgrade any already installed formulae
 brew upgrade
 
-echo =====================================
-echo ===== Install Homebrew packages =====
-echo =====================================
+echo '\n'
+echo    |=====================================|
+echo    |===== Install Homebrew packages =====|
+echo    |=====================================|
+echo '\n'
 
 # Install my brew packages
 brew install composer
@@ -53,9 +61,11 @@ brew install ansible
 # Install cask
 brew tap phinze/homebrew-cask
 
-echo ================================
-echo ===== Install Applications =====
-echo ================================
+echo '\n'
+echo    |================================|
+echo    |===== Install Applications =====|
+echo    |================================|
+echo '\n'
 
 # Install desired cask packages
 brew cask install cakebrew
@@ -78,9 +88,11 @@ brew cask install wine-stable
 # Remove brew cruft
 brew cleanup
 
-echo ====================================
-echo ===== Update System Prefernces =====
-echo ====================================
+echo '\n'
+echo    |====================================|
+echo    |===== Update System Prefernces =====|
+echo    |====================================|
+echo '\n'
 
 # Update System Prefernces - Disable Natural Scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -88,6 +100,7 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 # Update System Prefernces - Remove All Default Icons from the Dock
 defaults delete com.apple.dock persistent-apps
 defaults delete com.apple.dock persistent-others
+
 killall Dock
 
 # Add installed apps to Dock
@@ -105,9 +118,11 @@ defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</
 
 killall Dock
 
-echo =============================
-echo ===== Install Oh My Zsh =====
-echo =============================
+echo '\n'
+echo   |=============================|
+echo   |===== Install Oh My Zsh =====|
+echo   |=============================|
+echo '\n'
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
