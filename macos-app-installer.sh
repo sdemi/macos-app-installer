@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo '\n'
-echo    |==========================================================|
-echo    |===== MacOS Catalina 10.15.x personal install script =====|
-echo    |==========================================================|
-echo '\n'
+echo ''
+echo ==========================================================
+echo ===== MacOS Catalina 10.15.x personal install script =====
+echo ==========================================================
+echo ''
 
 # Primary basis of this script has been copied from Deian Isac
 # ref: https://medium.com/@deianisac/how-to-quickly-set-up-a-mac-b9f89aed0dc
@@ -15,24 +15,24 @@ echo Install Mac App Store apps first: Greenshot
 echo Install other apps manually: Microsoft Office, Citrix Workspace, KeepSolid VPN Unlimited, iStat Menu
 
 read -p "Press any key to continue… " -n1 -s
-echo '\n'
+echo ''
 
-echo '\n'
-echo    |========================================================|
-echo    |===== Skip installation of xcode, install manually =====|
-echo    |========================================================|
-echo '\n'
+echo ''
+echo ========================================================
+echo ===== Skip installation of xcode, install manually =====
+echo ========================================================
+echo ''
 
 # Install Xcode (install manually if failing)
 xcode-select --install
 read -p "Press any key when the installation has completed." -n1 -s
 echo '\n'
 
-echo '\n'
-echo    |=======================================|
-echo    |===== Install and update Homebrew =====|
-echo    |=======================================|
-echo '\n'
+echo ''
+echo =======================================
+echo ===== Install and update Homebrew =====
+echo =======================================
+echo ''
 
 # Check that Homebrew is installed and install if not
 if test ! $(which brew)
@@ -47,11 +47,11 @@ brew update
 # Upgrade any already installed formulae
 brew upgrade
 
-echo '\n'
-echo    |=====================================|
-echo    |===== Install Homebrew packages =====|
-echo    |=====================================|
-echo '\n'
+echo ''
+echo =====================================
+echo ===== Install Homebrew packages =====
+echo =====================================
+echo ''
 
 # Install my brew packages
 brew install composer
@@ -61,11 +61,11 @@ brew install ansible
 # Install cask
 brew tap phinze/homebrew-cask
 
-echo '\n'
-echo    |================================|
-echo    |===== Install Applications =====|
-echo    |================================|
-echo '\n'
+echo ''
+echo ================================
+echo ===== Install Applications =====
+echo ================================
+echo ''
 
 # Install desired cask packages
 brew cask install cakebrew
@@ -88,11 +88,11 @@ brew cask install mucommander
 # Remove brew cruft
 brew cleanup
 
-echo '\n'
-echo    |====================================|
-echo    |===== Update System Prefernces =====|
-echo    |====================================|
-echo '\n'
+echo ''
+echo ====================================
+echo ===== Update System Prefernces =====
+echo ====================================
+echo ''
 
 # Update System Prefernces - Disable Natural Scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -122,11 +122,11 @@ defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</
 
 killall Dock
 
-echo '\n'
-echo   |=============================|
-echo   |===== Install Oh My Zsh =====|
-echo   |=============================|
-echo '\n'
+echo ''
+echo =============================
+echo ===== Install Oh My Zsh =====
+echo =============================
+echo ''
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
